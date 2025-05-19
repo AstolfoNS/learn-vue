@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://unpkg.com/vue@latest"></script>
+
+    <link href="style.css" rel="stylesheet" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <form class="">
+        <input
+          type="text"
+          v-model="username"
+          :class="usernameError"
+          @input="checkUsername"
+          placeholder="enter your username"
+          @input=""
+        />
+
+        <br />
+
+        <input
+          type="password"
+          v-model="password"
+          :class="passwordError"
+          @input="checkPassword"
+          placeholder="enter your password"
+        />
+
+        <br />
+
+        <button type="submit" @click.prevent="submit">Login</button>
+      </form>
+    </div>
+
+    <script>
+      const app = {
+        data() {
+          return {
+            username: "",
+            password: "",
+            usernameError: "",
+            passwordError: "",
+          };
+        },
+        methods: {
+          submit(event) {
+            // event.preventDefault();
+
+            this.usernameError = "default-input";
+            this.passwordError = "default-input";
+
+            if (this.username.length < 3 || this.password.length < 3) {
+              alert("The input length smaller than 3.");
+
+              return;
+            }
+
+            username = "astolfo";
+            password = "1234567";
+
+            if (this.username != username) {
+              this.usernameError = "input-error";
+            }
+            if (this.password != password) {
+              this.passwordError = "input-error";
+            }
+
+            if (this.username == username && this.password == password) {
+              alert("login success!");
+            }
+          },
+          checkUsername() {
+            this.usernameError = "default-input";
+
+            if (this.username.length < 3) {
+              this.usernameError = "input-error";
+            }
+          },
+          checkPassword() {
+            this.passwordError = "default-input";
+
+            if (this.password.length < 3) {
+              this.passwordError = "input-error";
+            }
+          },
+        },
+      };
+
+      Vue.createApp(app).mount("#app");
+    </script>
+  </body>
+</html>
