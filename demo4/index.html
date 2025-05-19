@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue"></script>
+
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="box">
+          <div class="input-group">
+            <label for="input">perspective: px</label>
+            <br />
+            <input type="range" min="-000" max="+999" />
+            <br />
+
+            <label for="input">routeX: X deg</label>
+            <br />
+            <input type="range" min="-180" max="+180" />
+            <br />
+
+            <label for="input">routeY: Y deg</label>
+            <br />
+            <input type="range" min="-180" max="+180" />
+            <br />
+
+            <label for="input">routeZ: Z deg</label>
+            <br />
+            <input type="range" min="-180" max="+180" />
+            <br />
+
+            <button class="button" type="submit" @click.prevent="submit">
+              Reset!
+            </button>
+          </div>
+
+          <div class="output-group"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
