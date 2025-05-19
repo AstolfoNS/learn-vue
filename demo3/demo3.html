@@ -17,9 +17,7 @@
           type="text"
           v-model="username"
           :class="usernameError"
-          @input="checkUsername"
           placeholder="enter your username"
-          @input=""
         />
 
         <br />
@@ -28,7 +26,6 @@
           type="password"
           v-model="password"
           :class="passwordError"
-          @input="checkPassword"
           placeholder="enter your password"
         />
 
@@ -75,17 +72,33 @@
               alert("login success!");
             }
           },
-          checkUsername() {
+          // checkUsername() {
+          //   this.usernameError = "default-input";
+
+          //   if (this.username.length < 3) {
+          //     this.usernameError = "input-error";
+          //   }
+          // },
+          // checkPassword() {
+          //   this.passwordError = "default-input";
+
+          //   if (this.password.length < 3) {
+          //     this.passwordError = "input-error";
+          //   }
+          // },
+        },
+        watch: {
+          username(newValue, oldValue) {
             this.usernameError = "default-input";
 
-            if (this.username.length < 3) {
+            if (newValue.length < 3) {
               this.usernameError = "input-error";
             }
           },
-          checkPassword() {
+          password(newValue, oldValue) {
             this.passwordError = "default-input";
 
-            if (this.password.length < 3) {
+            if (newValue.length < 3) {
               this.passwordError = "input-error";
             }
           },
