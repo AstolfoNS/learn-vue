@@ -1,0 +1,7 @@
+.input-error {
+  border: 1px solid pink;
+}
+
+.default-input {
+  border: 1px solid blue;
+}
