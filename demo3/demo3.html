@@ -12,27 +12,33 @@
   </head>
   <body>
     <div id="app">
-      <form class="">
-        <input
-          type="text"
-          v-model="username"
-          :class="usernameError"
-          placeholder="enter your username"
-        />
+      <div class="container">
+        <h1>Login</h1>
 
-        <br />
+        <form class="form-group">
+          <input
+            type="text"
+            v-model="username"
+            :class="usernameError"
+            placeholder="enter your username"
+          />
 
-        <input
-          type="password"
-          v-model="password"
-          :class="passwordError"
-          placeholder="enter your password"
-        />
+          <br />
 
-        <br />
+          <input
+            type="password"
+            v-model="password"
+            :class="passwordError"
+            placeholder="enter your password"
+          />
 
-        <button type="submit" @click.prevent="submit">Login</button>
-      </form>
+          <br />
+
+          <button class="button" type="submit" @click.prevent="submit">
+            Login
+          </button>
+        </form>
+      </div>
     </div>
 
     <script>
