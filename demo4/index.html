@@ -14,32 +14,35 @@
       <div class="container">
         <div class="box">
           <div class="input-group">
-            <label for="input">perspective: px</label>
             <br />
-            <input type="range" min="-000" max="+999" />
+            <label for="input">perspective: {{ perspective }} px</label>
             <br />
+            <input type="range" min="200" max="999" v-model="perspective" />
 
-            <label for="input">routeX: X deg</label>
             <br />
-            <input type="range" min="-180" max="+180" />
+            <label for="input">routeX: {{ rotateX }} deg</label>
             <br />
+            <input type="range" min="-180" max="180" v-model="rotateX" />
 
-            <label for="input">routeY: Y deg</label>
             <br />
-            <input type="range" min="-180" max="+180" />
+            <label for="input">routeY: {{ rotateY }} deg</label>
             <br />
+            <input type="range" min="-180" max="180" v-model="rotateY" />
 
-            <label for="input">routeZ: Z deg</label>
             <br />
-            <input type="range" min="-180" max="+180" />
+            <label for="input">routeZ: {{ rotateZ }} deg</label>
             <br />
+            <input type="range" min="-180" max="180" v-model="rotateZ" />
 
-            <button class="button" type="submit" @click.prevent="submit">
+            <br />
+            <button class="button" type="submit" @click.prevent="handleReset">
               Reset!
             </button>
           </div>
 
-          <div class="output-group"></div>
+          <div class="output-group">
+            <div class="output-box" :style="[boxStyle]"></div>
+          </div>
         </div>
       </div>
     </div>
