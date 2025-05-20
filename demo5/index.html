@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://unpkg.com/vue"></script>
+
+    <link href="style.css" rel="stylesheet" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <h1>Todo List</h1>
+
+        <input placeholder="add a new todo" v-model="text" />
+        <br />
+
+        <button @click.prevent="addTodo(text)">Add</button>
+        <br />
+
+        <div class="todo-list">
+          <ul>
+            <li v-for="(todo, i) in todoArray" :key="i">
+              <div class="todo-element">
+                <div class="todo">
+                  <span :style="[todoStyle(i)]">{{ todo.item }}</span>
+                </div>
+
+                <div class="todo-complete">
+                  <button
+                    v-show="!todo.completed"
+                    @click.prevent="completeTodo(i)"
+                  >
+                    &check;
+                  </button>
+                </div>
+
+                <div class="todo-remove">
+                  <button @click.prevent="removeTodo(i)">&times;</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="main.js"></script>

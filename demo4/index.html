@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue"></script>
+
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="box">
+          <div class="input-group">
+            <br />
+            <label for="input">perspective: {{ perspective }} px</label>
+            <br />
+            <input type="range" min="200" max="999" v-model="perspective" />
+
+            <br />
+            <label for="input">routeX: {{ rotateX }} deg</label>
+            <br />
+            <input type="range" min="-180" max="180" v-model="rotateX" />
+
+            <br />
+            <label for="input">routeY: {{ rotateY }} deg</label>
+            <br />
+            <input type="range" min="-180" max="180" v-model="rotateY" />
+
+            <br />
+            <label for="input">routeZ: {{ rotateZ }} deg</label>
+            <br />
+            <input type="range" min="-180" max="180" v-model="rotateZ" />
+
+            <br />
+            <button class="button" type="submit" @click.prevent="handleReset">
+              Reset!
+            </button>
+          </div>
+
+          <div class="output-group">
+            <div class="output-box" :style="[boxStyle]"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

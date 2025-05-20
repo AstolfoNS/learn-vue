@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+
+  height: 30rem;
+  width: 40%;
+  border: 1px solid rgb(000, 000, 255);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 40%;
+  border: 1px solid rgb(255, 000, 000);
+}
+
+.output-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 60%;
+  border: 1px solid rgb(000, 255, 000);
+}
+
+.output-box {
+  width: 50%;
+  height: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: rgb(032, 064, 128);
+}
