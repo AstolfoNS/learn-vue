@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue"></script>
+
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <label><input type="checkbox" v-model="isPurple" />Purple</label>
+        <br />
+
+        <label>Text color</label>
+        <br />
+        <select v-model="textColor">
+          <option value="green">Green</option>
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+        </select>
+        <br />
+
+        <label>Circle size</label>
+        <br />
+        <input type="number" v-model="size" />
+        <br />
+
+        <label>Circle Rotate</label>
+        <br />
+        <input type="number" v-model="angle" />
+        <br />
+
+        <div
+          class="circle"
+          :class="[circleClass, textColor]"
+          :style="[circleSize, circleAngle]"
+        >
+          Hi
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="main.js"></script>
